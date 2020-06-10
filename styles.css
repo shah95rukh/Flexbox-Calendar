@@ -1,0 +1,76 @@
+* {
+  box-sizing: border-box;
+}
+
+/* Desktop Styles */
+@media only screen and (min-width: 602px) {
+  .flex-container > div {
+    flex-basis: calc(14% - 10px);
+  }
+
+/*   .sign-up { order: 1; }
+  .content { order: 2; } */
+}
+
+
+.flex-container {
+  border: 1px solid green;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  flex-direction: row;
+}
+
+.flex-container > div {
+  border: 1px solid blue; 
+  width: 100%;
+  margin: 5px;
+  padding: 5px;
+  text-align: start;
+  font-weight: bold;
+}
+.header {
+  border: 1px solid purple;
+}
+/* 
+.section {
+  width: 100%;
+  height: 50px;
+  border: 1px solid black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.menu {
+  background-color: #5995DA;
+  height: 5px;
+}
+
+.header {
+  background-color: #B2D6FF;
+}
+
+.content {
+  background-color: #EAEDF0;
+  height: 50px;
+}
+
+.sign-up {
+  background-color: #D6E9FE;
+}
+
+.feature-1 {
+  background-color: #F5CF8E;
+}
+
+.feature-2 {
+  background-color: #F09A9D;
+}
+
+.feature-3 {
+  background-color: #C8C6FA;
+} */
+
+
+
