@@ -1,76 +1,58 @@
 * {
-  box-sizing: border-box;
+    box-sizing: border-box;
 }
-
-/* Desktop Styles */
-@media only screen and (min-width: 602px) {
-  .flex-container > div {
-    flex-basis: calc(14% - 10px);
-  }
-
-/*   .sign-up { order: 1; }
-  .content { order: 2; } */
+h1 {
+    font-family: "Butcherman";
+    font-size: 30px;
+    color: orange;
 }
-
-
+.calendar-top {
+    border: 1px solid black;
+    text-align: center;
+    background-color: black;
+    flex-direction: row;
+    display: flex;
+    justify-content: center;
+}
+.calendar-body {
+    border: 1px solid orange;
+    background-color: black;
+}
 .flex-container {
-  border: 1px solid green;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: flex-start;
-  flex-direction: row;
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: center;
+}
+.flex-day-names {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: center;
 }
 
+.flex-day-names > div {
+    background-color: black;
+    margin: 5px;
+    width: 13%;
+    text-align: center;
+    height: 50px;
+    font-size: 1.2em;
+    color: orange;
+}
 .flex-container > div {
-  border: 1px solid blue; 
-  width: 100%;
-  margin: 5px;
-  padding: 5px;
-  text-align: start;
-  font-weight: bold;
+    background-color: #f1f1f1;
+    border: 1px solid orange;
+    width: 13%;
+    margin: 5px;
+    text-align: left;
+    font-size: 30px;
+    color: black;
+    padding: 5px;
 }
-.header {
-  border: 1px solid purple;
+.flex-container > div:hover {
+    background-color: black;
+    color: orange;
 }
-/* 
-.section {
-  width: 100%;
-  height: 50px;
-  border: 1px solid black;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+.currentDate {
+    background-color: black;
+    color: orange;
 }
-
-.menu {
-  background-color: #5995DA;
-  height: 5px;
-}
-
-.header {
-  background-color: #B2D6FF;
-}
-
-.content {
-  background-color: #EAEDF0;
-  height: 50px;
-}
-
-.sign-up {
-  background-color: #D6E9FE;
-}
-
-.feature-1 {
-  background-color: #F5CF8E;
-}
-
-.feature-2 {
-  background-color: #F09A9D;
-}
-
-.feature-3 {
-  background-color: #C8C6FA;
-} */
-
-
-
