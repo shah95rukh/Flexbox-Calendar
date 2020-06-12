@@ -12,12 +12,13 @@
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
         <script src="main.js"></script>
     </head>
-    <body onload='buildCalendar("")'>
+    <body onload='buildCalendar("start")'>
         <div class="calendar-top">
-            <!-- <input id="numDaysToShow" value="30" />
-            <input id="daysOffset" value="3" /> -->
             <button onclick='buildCalendar("-")'>-</button>
-            <h1 class="monthName"></h1>
+            <div class="dropdown">
+                <h1 class="monthName"></h1>
+                <div id="dropdown-c" class="dropdown-content"></div>
+            </div>
             <button onclick='buildCalendar("+")'>+</button>
         </div>
 

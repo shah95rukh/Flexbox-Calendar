@@ -6,6 +6,12 @@ h1 {
     font-size: 30px;
     color: orange;
 }
+.first-row {
+    display: flex;
+}
+.first-row div:last-child {
+    margin-left: auto;
+}
 .calendar-top {
     border: 1px solid black;
     text-align: center;
@@ -20,31 +26,20 @@ h1 {
 }
 .flex-container {
     display: flex;
-    flex-wrap: nowrap;
+    flex-wrap: wrap;
     justify-content: center;
 }
 .flex-day-names {
-    display: flex;
-    flex-wrap: nowrap;
-    justify-content: center;
+    display: none;
 }
 
-.flex-day-names > div {
-    background-color: black;
-    margin: 5px;
-    width: 13%;
-    text-align: center;
-    height: 50px;
-    font-size: 1.2em;
-    color: orange;
-}
 .flex-container > div {
     background-color: #f1f1f1;
     border: 1px solid orange;
-    width: 13%;
+    width: 100%;
     margin: 5px;
     text-align: left;
-    font-size: 30px;
+    font-size: 18px;
     color: black;
     padding: 5px;
 }
@@ -52,7 +47,65 @@ h1 {
     background-color: black;
     color: orange;
 }
-.currentDate {
-    background-color: black;
-    color: orange;
+.offsetDivs {
+    display: none;
+}
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f1f1f1;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+}
+
+.dropdown-content div {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown-content div:hover {
+    background-color: #ddd;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+/* Desktop version */
+@media only screen and (min-width: 650px) {
+    .flex-container > div {
+        flex-basis: 13%;
+    }
+    .flex-container {
+        flex-wrap: nowrap;
+    }
+    .flex-day-names {
+        display: flex;
+        flex-wrap: nowrap;
+        justify-content: center;
+    }
+    .flex-day-names > div {
+        background-color: black;
+        margin: 5px;
+        width: 100%;
+        text-align: center;
+        height: 50px;
+        font-size: 1.2em;
+        color: orange;
+    }
+    .first-row div:last-child {
+        display: none;
+    }
+    .offsetDivs {
+        display: flex;
+        visibility: hidden;
+    }
 }
