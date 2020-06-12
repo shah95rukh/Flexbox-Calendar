@@ -31,5 +31,23 @@
             <div class="flex-container"></div>
             <div id="lastDiv" class="flex-container"></div>
         </div>
+        <!-- The Modal -->
+        <div id="myModal" class="modal">
+            <!-- Modal content -->
+            <div class="modal-content">
+                <h2>Schedule Event</h2>
+                <p>What event would you like to schedule?</p>
+                <p id="eventsTitles">Event Description</p>
+                <input type="text" id="desc" />
+                <p id="eventsTitles">Event Time</p>
+                <input type="time" id="time" /><br />
+                <div id="eBtns">
+                    <button disabled id="schedule" onclick="scheduleEvent(-1)">
+                        Schedule
+                    </button>
+                    <button onclick="scheduleEvent(-2)">Cancel</button>
+                </div>
+            </div>
+        </div>
     </body>
 </html>

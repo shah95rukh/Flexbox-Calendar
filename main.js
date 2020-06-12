@@ -44,7 +44,7 @@ var currentDaysInMonth = daysInMonth(visibleMonth, visibleYear);
 var currentDayOffset = dayOffset(visibleMonth, visibleYear);
 
 //A function to truncate a string and add ... to a specific number of characters
-var longString = "This is a long string to see where things get cut off";
+var longString = "";
 
 function truncateString(str, num) {
     if (str.length <= num) {
@@ -117,7 +117,6 @@ function buildCalendar(change) {
         dropdownDiv.innerHTML +=
             `<div onclick="buildCalendar(${i})">` + months[i] + "</div>";
     }
-    console.log(dropdownDiv);
 
     var allFlex = $(".flex-container");
     //Now we create a for loop that builds the content
@@ -134,14 +133,13 @@ function buildCalendar(change) {
                     "<div class='offsetDivs'>" + myCount + "</div>";
                 currentDayOffset--;
             } else {
-                var div = "<div>";
+                var div = `<div class="dateDiv" onclick="scheduleEvent(${myCount})">`;
                 if (
                     currentDay == myCount &&
                     currentMonth == visibleMonth &&
                     currentYear == visibleYear
                 ) {
-                    div =
-                        "<div style='background-color: orange; color: white'>";
+                    div = `<div class="dateDiv" onclick="scheduleEvent(${myCount})" style='background-color: orange; color: white'>`;
                 }
                 allFlex[i].innerHTML +=
                     div +
@@ -153,13 +151,12 @@ function buildCalendar(change) {
                     weekdays[j] +
                     "</div>" +
                     "</div>" +
-                    "<div>Birthday re..</div>" +
-                    "<div>Dancing class</div>" +
                     "</div>";
                 myCount++;
             }
         }
     }
+    console.log(allFlex);
     if (
         !(copyDaysOffset == 6 && currentDaysInMonth > 29) &&
         !(copyDaysOffset == 5 && currentDaysInMonth > 30)
@@ -172,6 +169,38 @@ function buildCalendar(change) {
     }
 
     adjustHeight();
+}
+var eventDate;
+function scheduleEvent(eDate) {
+    if ($("#myModal").css("display") == "none") {
+        eventDate = eDate;
+
+        $("#myModal").css({ display: "block" });
+
+        $("body input").change(function () {
+            var empty = false;
+            $("body input").each(function () {
+                if ($(this).val() == "") {
+                    empty = true;
+                }
+            });
+            if (!empty) {
+                $("#schedule").removeAttr("disabled");
+            }
+        });
+    } else {
+        if (eDate == -1) {
+            longString += $("#time").val() + " - " + $("#desc").val();
+            $(".flex-container").children("div.dateDiv")[
+                eventDate - 1
+            ].innerHTML += `<div>${truncateString(longString, 15)}</div>`;
+        }
+        $("#myModal").css({ display: "none" });
+        $("body input").each(function () {
+            $(this).val("");
+        });
+        longString = "";
+    }
 }
 
 $(window).resize(function () {
