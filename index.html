@@ -3,25 +3,78 @@
     <head>
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <title>Flex Calendar</title>
+        <title>Flexbox Calendar</title>
         <link href="styles.css" rel="stylesheet" />
         <link
-            href="https://fonts.googleapis.com/css?family=Butcherman"
+            href="https://fonts.googleapis.com/css?family=ABeeZee"
+            rel="stylesheet"
+        />
+        <link
+            href="https://fonts.googleapis.com/css?family=Monofett"
+            rel="stylesheet"
+        />
+        <link
+            href="https://fonts.googleapis.com/css?family=Montez"
+            rel="stylesheet"
+        />
+        <link
+            href="https://fonts.googleapis.com/css?family=Alike Angular"
+            rel="stylesheet"
+        />
+        <link
+            href="https://fonts.googleapis.com/css?family=Amatic SC"
+            rel="stylesheet"
+        />
+        <link
+            href="https://fonts.googleapis.com/css?family=Nanum Pen Script"
+            rel="stylesheet"
+        />
+        <link
+            href="https://fonts.googleapis.com/css?family=Kranky"
+            rel="stylesheet"
+        />
+        <link
+            href="https://fonts.googleapis.com/css?family=Arbutus"
+            rel="stylesheet"
+        />
+        <link
+            href="https://fonts.googleapis.com/css?family=Swanky and Moo Moo"
+            rel="stylesheet"
+        />
+        <link
+            href="https://fonts.googleapis.com/css?family=Bangers"
+            rel="stylesheet"
+        />
+        <link
+            href="https://fonts.googleapis.com/css?family=Just Me Again Down Here"
+            rel="stylesheet"
+        />
+        <link
+            href="https://fonts.googleapis.com/css?family=Megrim"
             rel="stylesheet"
         />
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
         <script src="main.js"></script>
     </head>
     <body onload='buildCalendar("start")'>
+        <div id="overlay" onclick="off()">
+            <div id="text">
+                Did you really expect 2020 to end normally? It's a loop year.
+            </div>
+        </div>
         <div class="calendar-top">
-            <button onclick='buildCalendar("-")'>-</button>
+            <button class="leftBtn" onclick='buildCalendar("-")'>
+                <i class="arrow left"></i>
+            </button>
             <div class="dropdown">
                 <h1 class="monthName"></h1>
                 <div id="dropdown-c" class="dropdown-content"></div>
             </div>
-            <button onclick='buildCalendar("+")'>+</button>
+            <button class="rightBtn" onclick='buildCalendar("+")'>
+                <i class="arrow right"></i>
+            </button>
         </div>
-
+        <!-- Calendar days -->
         <div class="calendar-body">
             <div id="dayNames" class="flex-day-names"></div>
             <div class="flex-container"></div>
@@ -31,9 +84,8 @@
             <div class="flex-container"></div>
             <div id="lastDiv" class="flex-container"></div>
         </div>
-        <!-- The Modal -->
+        <!-- Event schedule modal -->
         <div id="myModal" class="modal">
-            <!-- Modal content -->
             <div class="modal-content">
                 <h2>Schedule Event</h2>
                 <p>What event would you like to schedule?</p>

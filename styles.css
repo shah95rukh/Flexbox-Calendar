@@ -2,9 +2,12 @@
     box-sizing: border-box;
 }
 h1 {
-    font-family: "Butcherman";
-    font-size: 30px;
-    color: orange;
+    font-size: 25px;
+    color: white;
+    height: 30px;
+    width: 200px;
+    margin-left: 15px;
+    margin-right: 15px;
 }
 .first-row {
     display: flex;
@@ -20,10 +23,6 @@ h1 {
     display: flex;
     justify-content: center;
 }
-.calendar-body {
-    border: 1px solid orange;
-    background-color: black;
-}
 .flex-container {
     display: flex;
     flex-wrap: wrap;
@@ -35,7 +34,6 @@ h1 {
 
 .flex-container > div {
     background-color: #f1f1f1;
-    border: 1px solid orange;
     width: 100%;
     margin: 5px;
     text-align: left;
@@ -44,8 +42,8 @@ h1 {
     padding: 5px;
 }
 .flex-container > div:hover {
-    background-color: black;
-    color: orange;
+    background-color: slategray;
+    color: white;
 }
 .offsetDivs {
     display: none;
@@ -63,37 +61,68 @@ h1 {
     box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
     z-index: 1;
 }
-
+.arrow {
+    border: solid black;
+    border-width: 0 3px 3px 0;
+    display: inline-block;
+    padding: 3px;
+}
+.right {
+    transform: rotate(-45deg);
+    -webkit-transform: rotate(-45deg);
+}
+.left {
+    transform: rotate(135deg);
+    -webkit-transform: rotate(135deg);
+}
+#overlay {
+    position: fixed;
+    display: none;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 2;
+    cursor: pointer;
+}
+#text {
+    position: absolute;
+    text-align: center;
+    top: 50%;
+    left: 50%;
+    font-size: 50px;
+    color: white;
+    transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+}
 .dropdown-content div {
     color: black;
     padding: 12px 16px;
     text-decoration: none;
     display: block;
 }
-
 .dropdown-content div:hover {
     background-color: #ddd;
 }
-
 .dropdown:hover .dropdown-content {
     display: block;
 }
-
 .modal {
-    display: none; /* Hidden by default */
-    position: fixed; /* Stay in place */
-    z-index: 1; /* Sit on top */
-    padding-top: 100px; /* Location of the box */
+    display: none;
+    position: fixed;
+    z-index: 1;
+    padding-top: 100px;
     left: 0;
     top: 0;
-    width: 100%; /* Full width */
-    height: 100%; /* Full height */
-    overflow: auto; /* Enable scroll if needed */
-    background-color: rgb(0, 0, 0); /* Fallback color */
-    background-color: rgba(0, 0, 0, 0.4); /* Black w/ opacity */
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgb(0, 0, 0);
+    background-color: rgba(0, 0, 0, 0.4);
 }
-
-/* Modal Content */
 .modal-content {
     background-color: #fefefe;
     margin: auto;
@@ -106,16 +135,13 @@ h1 {
     border-radius: 25px;
     border: 5px solid #73ad21;
 }
-
 #eBtns {
     flex-direction: row;
 }
-
 #eventsTitles {
     font-weight: bold;
     color: rgb(12, 163, 201);
 }
-
 input {
     height: 30px;
     width: 100%;
@@ -138,13 +164,13 @@ h2 {
         justify-content: center;
     }
     .flex-day-names > div {
-        background-color: black;
+        background-color: white;
         margin: 5px;
         width: 100%;
         text-align: center;
         height: 50px;
         font-size: 1.2em;
-        color: orange;
+        color: black;
     }
     .first-row div:last-child {
         display: none;
@@ -152,5 +178,16 @@ h2 {
     .offsetDivs {
         display: flex;
         visibility: hidden;
+    }
+    h1 {
+        font-size: 30px;
+        color: white;
+        height: 40px;
+        width: 300px;
+        margin-left: 40px;
+        margin-right: 40px;
+    }
+    .eText {
+        font-size: 14px;
     }
 }
